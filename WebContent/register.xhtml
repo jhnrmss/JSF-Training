@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+  <title>Register</title>
+</head>
+
+<body>
+	<h:form>
+		<h1>Register</h1>
+		<h:panelGrid columns="1"  >
+			<h:column>
+				<h:outputLabel for="name" value="Name: "/>
+				<h:inputText id="name" value="#{userController.user.name}"/>
+				<h:message for="name"/>
+			</h:column>
+			<h:column>
+				<h:outputLabel for="email" value="Email: "/>
+				<h:inputText id="email" value="#{userController.user.email}"/>
+				<h:message for="email"/>
+			</h:column>
+			
+				
+			<h:column>
+				<h:outputLabel for="password" value="Password: "/>
+				<h:inputSecret id="password" value="#{userController.user.password}"/>
+				<h:message for="password"/>
+			</h:column>
+			<h:column>
+				<h:outputLabel for="conPass" value="Confirm Password: "/>
+				<h:inputSecret id="conPass" value="#{userController.confirmPassword}"/>
+				<h:message for="conPass"/>
+			</h:column>
+			
+			
+			<h:column>
+				<h:commandButton action="#{userController.register}" value="Register"/>
+			</h:column>
+		</h:panelGrid>
+	</h:form>
+</body>
+
+</html>
